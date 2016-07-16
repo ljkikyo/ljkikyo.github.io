@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<metA charset='utf-8'>
+	<title>列车时刻表查询</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,maximum-scale=1, user-scalable=no">
+	<!--<link rel="stylesheet" type="text/css" href="normalize.css">-->
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="page" id="index">
+		<div class="header">
+			<h1>列车时刻表查询</h1>
+		</div>
+		
+		<div class="ui-content">
+			<div class="ui-field-contain">
+				<label>发车站:</label>
+				<input type="text" name="text-basic" id="search-begin" value="">
+			</div>
+			<div class="ui-field-contain">
+				<label>终点站:</label>
+				<input type="text" name="text-basic" id="search-end" value="">
+			</div>
+			<div class="ui-field-contain">
+            <label>车次:</label>
+            <input type="text" name="text-basic" id="search-no" value="">
+        	</div>
+        	<input type="button" value="搜索" id="search-submit" class="search-btn">
+        	<ul id="list" class="list"></ul>
+		</div>
+
+		<div class="footer">
+			<div class="navbar">
+				<ul>
+					<li><a href="#" class="ui-btn-active">查询</a></li>
+					<li><a href="#" class="ui-btn-store">收藏</a></li>
+					<li><a href="#" class="ui-btn-set">设置</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<script src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

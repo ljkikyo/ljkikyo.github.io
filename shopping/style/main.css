@@ -1,0 +1,316 @@
+
+.header{
+	background: url(../img/13.jpg) center 0 scroll no-repeat;
+	background-size: 100% 600px;
+	width: 100%;
+	height: 250px;
+}
+.header h1{
+	font-size: 36px;
+	font-weight: bold;
+	padding-top: 100px;
+	padding-left: 80px; 
+	
+	color: #FF8000;
+	letter-spacing: 1px;
+}
+.navleft{
+	float: left;
+	margin-left: 80px;
+	
+}
+.navright{
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+	
+}
+        .topmenu
+        {
+            display: block;
+            width: 220px;
+            border: 2px solid #FF8000;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .toptitle
+        {
+            height: 40px;
+            line-height: 40px;
+            text-align: left;
+            font-size: 11pt;
+            font-weight: bold;
+            color: White;
+            background: #FF8000;
+            padding-left: 20px;
+        }
+        .topmenu li
+        {
+            height: 30px;
+            line-height: 30px;
+            font-size: 11pt;
+            list-style-type: none;
+            text-align: left;
+            padding-left: 8px;
+            z-index: 3;
+            
+        }
+        .topmenu li a
+        {
+            text-decoration: none;
+            color: #313131;
+        }
+        .topmenu li a:hover
+        {
+            text-decoration: underline;
+            font-weight: bold;
+            color: #FF8000;
+        }
+        .topmenu .lihover /*鼠标移动到上面时，应用的样式*/
+        {
+            border: 1px solid #DDD;
+            border-right: 0;
+            box-shadow: 0 0 8px #DDD;
+            -moz-box-shadow: 0 0 8px #DDD;
+            -webkit-box-shadow: 0 0 8px #DDD;
+            background-image: none;
+            height:60px;
+            border-left:4px solid #FF8000;
+            
+            
+        }
+         .topmenu .lihover .submenu /*悬浮层*/
+        {
+            display: block;
+        }
+        
+        .topmenu .lihover span /*白色小方框*/
+        {
+            background: white;
+            display: inline-block;
+            z-index: 20;
+            width: 20px;
+            height: 60px;
+            float: right;
+            position: relative;
+        }
+        
+      
+      .topmenu li b
+       {
+           display:none;
+           
+        }
+      
+        .topmenu .lihover b
+        {
+            display:block;
+            height:30px;
+            line-height:30px;
+            font-weight:normal;
+            font-size:10pt;
+        }
+     
+        .submenu
+        {
+            display: none;
+            width: 500px;
+            left: 220px;
+            position: absolute;
+            top: 0px;
+            border: 1px solid #DDD;
+            z-index: 4;
+            background: white;
+            box-shadow: 0 0 8px #DDD;
+            -moz-box-shadow: 0 0 8px #DDD;
+            -webkit-box-shadow: 0 0 8px #DDD;
+        }
+        .leftdiv
+        {
+            
+            width: 490px;
+            margin: 5px;
+        }
+        .leftdiv dl
+        {
+            display: block;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 6px;
+            overflow: hidden;
+        }
+        .leftdiv dl dt
+        {
+            display: block;
+            float: left;
+            width: 60px;
+            text-align: right;
+            height: 22px;
+            line-height: 22px;
+            padding-right: 6px;
+        }
+        
+        .leftdiv dl dt a
+        {
+            color: #FF8000;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 10pt;
+        }
+        .leftdiv dl dd
+        {
+            display: block;
+            overflow: hidden;
+        }
+        .leftdiv dl dd a
+        {
+            display: block;
+            float: left;
+            border-left: 1px solid #CCC;
+            color: #737373;
+            font-size: 9pt;
+            padding: 0 8px;
+            height: 14px;
+            line-height: 14px;
+            margin: 4px 0;
+        }
+
+#container{
+			width: 1000px;
+			height: 410px;
+			position: relative;
+			overflow: hidden;
+			border:3px solid #FF8000;
+		}
+#container a:hover{
+	text-decoration: none;
+}
+		#list{
+			width: 7000px;
+			height: 410px;
+			position: absolute;
+			z-index: 1;
+		}
+		#list img{
+			float: left;
+		}
+		#buttons{
+			position: absolute;
+			height: 20px;
+			width: 100px;
+			z-index: 2;
+			bottom: 20px;
+			left: 420px;
+		}
+		#buttons span{
+			cursor:pointer;
+			float: left;
+			border:1px solid #fff;
+			width: 10px;
+			height: 10px;
+			border-radius:50%;
+			background-color: #333;
+			margin-right: 5px;
+		}
+		#buttons .on{
+			background-color: orangered;
+		}
+		.arrow{
+			cursor: pointer;
+			display: none;
+			line-height: 39px;
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			z-index: 2;
+			top:180px;
+			background-color: rgba(0,0,0,.3);
+			color: #fff;
+		}
+		.arrow:hover{
+			background-color: rgba(0,0,0,.7);
+		}
+		#container:hover .arrow{display: block;}
+		#prev{left: 20px;}
+		#next{right: 20px;}
+
+.content{
+	clear: both;
+	margin:0 auto;
+	height: 500px;
+	margin-top: 20px;
+}
+.content h2{
+	font-size: 24px;
+	padding-top:30px;
+	margin-left: 80px; 
+	margin-right: 105px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #FF8000;
+
+}
+.shoplist{
+	padding-top: 20px;
+	margin: 0 auto;
+}
+.shoplist ul{
+	padding-left: 100px;
+}
+.shoplist ul li{
+	float: left;
+	width: 285px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	position: relative;
+	text-align: center;
+	border: 2px solid #FF8000;
+}
+.shoplist ul li img{
+	border: none;
+	position: relative;
+	z-index: 2;
+}
+.shoplist ul li a{
+	width: 285px;
+	display: block;
+	
+}
+.shoplist ul li a span{
+	position: absolute;
+	z-index: 2;
+	bottom: 2px;
+	left: 0px;
+	width: 285px;
+	height: 60px;
+	filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;
+	background-color: #FF8000;
+	color: #fff;
+	line-height: 60px;
+	text-align: center;
+	display: none;
+	font-size: 16px;
+}
+.shoplist ul li a:hover span{
+	display: block;
+}
+.footer{
+	clear: both;
+	text-align:center; 
+	background-color:#F2D7E6; 
+	line-height:24px; 
+	padding:50px 0;
+}
+.footer i{font-style:normal; margin:0 5px; }
+.footer a{color:#000;}
+.footer a:hover{color:#F60;}
+.web{padding-top:30px;}
+.web img{margin:0 12px;}
+
+
+
+
+
+        

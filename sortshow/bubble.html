@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排序算法可视化</title>
+	<!-- <link rel="stylesheet" type="text/css" href="./visualization.css"> -->
+	<style type="text/css" media="screen">
+		#container{
+			margin:100px auto;
+			width:800px;
+			height:500px;
+			background-color:#000;
+			position:relative;
+		}
+		#container .bar{
+			width:48px;
+			color:#FFF;
+			border-color:#FFF;
+			background-color:#FF6A05;
+			text-align:center;
+			line-height:20px;
+			position:absolute;
+			bottom:0;
+			transition: all .8s;
+		}
+		.btn{
+			width: 300px;
+			margin: -35px auto;
+			text-align: center;
+		}
+		button{
+			width: 100px;
+			height: 30px;
+			border-radius: 8px;
+			margin-right: 30px;
+			outline: none;
+			font-size: 16px;
+		}
+		button:hover{
+			background-color: #259CC7;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+
+	</div>
+	<div class="btn">	
+	<button id="bubble">冒泡排序</button>
+	<button id="quick">快速排序</button>
+	</div>
+
+<script type="text/javascript">
+var bubbleBtn=document.getElementById('bubble');
+var quickBtn=document.getElementById('quick');
+var snapshots=[];									//快照集合
+var timer=null;										//定时						
+var arr=[50,21,5,89,13,35,69,44,60,15,51,80,55,71];					//排序数组
+
+//console.log(bars instanceof Array);							//ture
+var container=document.getElementById("container");
+/*绘图*/
+function painting(){
+	
+	var bars=[].slice.call( document.querySelectorAll(".bar") );			//将所有bar元素的集合转换为数组对象
+	for(var i=0;i<arr.length;i++){
+		if(bars.length!=arr.length){
+			var bar=document.createElement("div");
+			bar.className="bar";
+			container.appendChild(bar);
+		}else{
+			break;								//当bar的数量等于数组的长度时，停止创建bar元素
+		};
+	};
+	var snapshot=snapshots.shift() || [];						//取出快照记录数组中的第一条记录
+	console.log(snapshot);
+	if(snapshot.length!=0){
+		for(var i=0; i<bars.length; i++){
+			bars[i].innerHTML=snapshot[i];
+			bars[i].style.height=snapshot[i]*5+"px";
+			bars[i].style.left=(i+1)*50+"px";
+		};
+	}else{
+		clearInterval(timer);							//绘制结束
+		return;
+	};
+};
+
+/*冒泡排序*/
+function bubbleSort(arr){
+	if(arr.length<=1){
+		return arr;
+	};
+	var temp=0;
+	for(var i=0; i<arr.length; i++){
+		for(var j=0; j<arr.length-i-1; j++){
+			if(arr[j]>arr[j+1]){
+				temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+				// console.log(arr instanceof Array);			//ture
+				snapshots.push(JSON.parse(JSON.stringify(arr)));	//记录下快照
+			};
+		};
+	};
+	return arr;
+};
+
+/*快速排序
+function quickSort(arr){
+	if(arr.length<=1){
+		return arr;
+	};
+	var pivotIndex=Math.floor(arr.length/2);
+	var pivot=arr.splice(pivotIndex,1);
+	var left=[];
+	var right=[];
+	for(var i=0; i<arr.length; i++){
+		if(arr[i]<pivot){
+			left.push(arr[i]);
+		}else{
+			right.push(arr[i]);
+		};
+	};
+	arr=left.concat( pivot, right );
+	console.log(arr);
+	return quickSort(left).concat( pivot, quickSort(right) );
+};*/
+function quickSort(array, left, right) {
+    if (Object.prototype.toString.call(array).slice(8, -1) === 'Array' && typeof left === 'number' && typeof right === 'number') {
+        if (left < right) {
+            var x = array[right], i = left - 1, temp;
+            for (var j = left; j <= right; j++) {
+                if (array[j] <= x) {
+                    i++;
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;			
+                }			
+                snapshots.push(JSON.parse(JSON.stringify(array)));
+            }
+            
+            quickSort(array, left, i - 1);
+            quickSort(array, i + 1, right);
+        };
+    } else {
+        return 'array is not an Array or left or right is not a number!';
+    }
+}
+
+Array.prototype.bubbleSort=function(){
+	return bubbleSort(this);
+};
+Array.prototype.quickSort=function(){
+	return quickSort(this);
+};
+
+
+bubbleBtn.onclick=function(){
+	var arr=[50,21,5,89,13,35,69,44,60,15,51,80,55,71];
+	arr.bubbleSort();									//排序
+timer=setInterval(painting,200);
+}
+quickBtn.onclick=function(){
+	var arr=[50,21,5,89,13,35,69,44,60,15,51,80,55,71];
+	quickSort(arr,0,arr.length-1);									//排序
+timer=setInterval(painting,200);
+}
+								//定时绘制
+
+</script>
+</body>
+</html>
