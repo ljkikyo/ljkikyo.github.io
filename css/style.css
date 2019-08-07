@@ -1034,6 +1034,7 @@ section p strong{
 				line-height: 1em;
 				margin-left: 0.75em;
 				padding-left: 0.75em;
+				white-space: nowrap;
 			}
 
 				#footer .copyright li:first-child {
